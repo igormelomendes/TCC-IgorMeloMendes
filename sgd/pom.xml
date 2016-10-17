@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>ifes.edu.tcc</groupId>
+  <artifactId>sgd</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>sgd</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.8</jdk.version>
+		<!-- Dependencies versions -->
+		<commons-codec.version>1.10</commons-codec.version>
+		<commons-collections.version>4.1</commons-collections.version>
+		<commons-compress.version>1.12</commons-compress.version>
+		<commons-httpclient.version>3.1</commons-httpclient.version>
+		<commons-io.version>2.5</commons-io.version>
+		<commons-logging.version>1.2</commons-logging.version>
+		<commons-net.version>3.5</commons-net.version>
+		<gson.version>2.7</gson.version>
+		<hibernate.version>5.2.2.Final</hibernate.version>
+		<jedis.version>2.9.0</jedis.version>
+		<joda-time.version>2.9.4</joda-time.version>
+		<json.version>1.0.4</json.version>
+		<jsoup.version>1.9.2</jsoup.version>
+		<junit.version>4.12</junit.version>
+		<log4j.version>2.6.2</log4j.version>
+		<mysqljdbc.version>6.0.3</mysqljdbc.version>
+		<persistence-api.version>1.0.2</persistence-api.version>
+		<postgresqljdbc.version>9.4.1210.jre7</postgresqljdbc.version>
+		<servlet.version>3.1.0</servlet.version>
+		<servlet.jsp.version>2.3.1</servlet.jsp.version>
+		<servlet.jsp.jstl.version>1.2.1</servlet.jsp.jstl.version>
+		<servlet.jstl.version>1.2</servlet.jstl.version>
+		<solrj.version>6.2.0</solrj.version>
+		<twitter4j.version>[4.0,)</twitter4j.version>
+	</properties>
+
+  <dependencies>
+		<!-- http://hibernate.org/orm/downloads/ -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
+			<artifactId>hibernate-core</artifactId>
+			<!-- <artifactId>hibernate-entitymanager</artifactId> -->
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<!-- optional: http://hibernate.org/orm/downloads/ -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-osgi</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-envers</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-c3p0</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-proxool</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-infinispan</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<!-- http://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- http://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysqljdbc.version}</version>
+		</dependency>
+
+		<!-- http://mvnrepository.com/artifact/javax.persistence/persistence-api -->
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>${persistence-api.version}</version>
+		</dependency>
+	</dependencies>
+</project>
