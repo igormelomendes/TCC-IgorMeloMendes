@@ -3,27 +3,28 @@ package Model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Cliente {
-	@Column
 	@Id
-	@GeneratedValue
-	public long idCliente;
+	@Column(name = "id_Cliente")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	@Column
-	public String Nome;
+	private String Nome;
 	@Column
-	public int CPF;
+	private Integer CPF;
 	@Column
-	String Identidade;
+	private String Identidade;
 
-	public long getIdCliente() {
-		return idCliente;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -34,11 +35,11 @@ public class Cliente {
 		Nome = nome;
 	}
 
-	public int getCPF() {
+	public Integer getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(int cPF) {
+	public void setCPF(Integer cPF) {
 		CPF = cPF;
 	}
 
@@ -49,4 +50,5 @@ public class Cliente {
 	public void setIdentidade(String identidade) {
 		Identidade = identidade;
 	}
+
 }
