@@ -29,7 +29,7 @@
 		<jsoup.version>1.9.2</jsoup.version>
 		<junit.version>4.12</junit.version>
 		<log4j.version>2.6.2</log4j.version>
-		<mysqljdbc.version>6.0.3</mysqljdbc.version>
+		<mysqljdbc.version>5.1.40</mysqljdbc.version>
 		<persistence-api.version>1.0.2</persistence-api.version>
 		<postgresqljdbc.version>9.4.1210.jre7</postgresqljdbc.version>
 		<servlet.version>3.1.0</servlet.version>

@@ -8,16 +8,20 @@ import javax.persistence.Id;
 
 @Entity
 public class Cliente {
+
 	@Id
-	@Column(name = "id_Cliente")
+	@Column(name = "id_cliente")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	@Column(name = "nome_completo")
+	private String nomeCompleto;
+
 	@Column
-	private String Nome;
+	private Integer cpf;
+
 	@Column
-	private Integer CPF;
-	@Column
-	private String Identidade;
+	private String rg;
 
 	public Long getId() {
 		return id;
@@ -27,28 +31,28 @@ public class Cliente {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return Nome;
+	public String getNomeCompleto() {
+		return nomeCompleto;
 	}
 
-	public void setNome(String nome) {
-		Nome = nome;
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
 	}
 
-	public Integer getCPF() {
-		return CPF;
+	public Integer getCpf() {
+		return cpf;
 	}
 
-	public void setCPF(Integer cPF) {
-		CPF = cPF;
+	public void setCpf(Integer cpf) {
+		this.cpf = cpf;
 	}
 
-	public String getIdentidade() {
-		return Identidade;
+	public String getRg() {
+		return rg;
 	}
 
-	public void setIdentidade(String identidade) {
-		Identidade = identidade;
+	public void setRg(String rg) {
+		this.rg = rg;
 	}
 
 }
