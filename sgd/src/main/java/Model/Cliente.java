@@ -1,10 +1,15 @@
 package Model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import org.hibernate.mapping.List;
 
 @Entity
 public class Cliente {
@@ -23,6 +28,18 @@ public class Cliente {
 	@Column
 	private String rg;
 
+	// Relacionamentos 1.*
+
+	@OneToMany(cascade = {
+			CascadeType.REFRESH }, targetEntity = Veiculo.class, fetch = FetchType.LAZY, mappedBy = "cliente")
+	private List veiculo;
+
+	// TODO conferir qual que está certo
+	/*
+	 * @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	 * 
+	 * @JoinColumn(name = "id_cliente") private List Veiculo;
+	 */
 	public Long getId() {
 		return id;
 	}
