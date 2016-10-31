@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,10 +10,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "veiculo")
 public class Veiculo {
 	@Id
 	@Column(name = "id_veiculo")
@@ -35,10 +40,14 @@ public class Veiculo {
 
 	// Relacionamentos
 
-	@OneToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.EAGER, orphanRemoval = true)
-	@JoinColumn(name = "id_cliente", nullable = false)
+	@ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
 	@PrimaryKeyJoinColumn
+	@JoinColumn(name = "cliente_fk", nullable = false)
 	private Cliente cliente;
+
+	@OneToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY, mappedBy = "servico")
+	@JoinColumn(name = "servico_fk")
+	private List<Servico> servicos;
 
 	// Gets e Sets
 
