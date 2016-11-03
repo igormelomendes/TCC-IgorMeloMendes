@@ -11,7 +11,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -40,8 +39,8 @@ public class Cliente {
 
 	// Relacionamentos 1.*
 
-	@OneToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY, mappedBy = "cliente")
-	@JoinColumn(name = "cliente_fk")
+	@OneToMany(cascade = {
+			CascadeType.REFRESH }, targetEntity = Veiculo.class, fetch = FetchType.LAZY, mappedBy = "cliente")
 	private List<Veiculo> veiculos;
 
 	public Long getId() {

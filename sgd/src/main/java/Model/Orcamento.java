@@ -2,17 +2,16 @@ package Model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-// TODO Repensar sobre isso.
-
-@Entity
+//@Entity
+@Table(name = "orcamento")
 public class Orcamento {
 	@Id
 	@Column(name = "id_orcamento")
@@ -22,8 +21,7 @@ public class Orcamento {
 	@Column(name = "nome_cliente")
 	private String nome;
 
-	// TODO CONFERIR SE TA CERTO!
 	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
-	@JoinColumn(name = "servico_fk")
+	@JoinColumn(name = "orcamento_fk")
 	private Servico servico;
 }

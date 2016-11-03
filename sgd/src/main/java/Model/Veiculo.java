@@ -1,17 +1,12 @@
 package Model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
@@ -40,14 +35,15 @@ public class Veiculo {
 
 	// Relacionamentos
 
-	@ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH })
+	@ManyToOne
 	@PrimaryKeyJoinColumn
-	@JoinColumn(name = "cliente_fk", nullable = false)
+	@JoinColumn(name = "veiculo_fk")
 	private Cliente cliente;
 
-	@OneToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY, mappedBy = "servico")
-	@JoinColumn(name = "servico_fk")
-	private List<Servico> servicos;
+	// @OneToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY,
+	// mappedBy = "servico")
+	// @JoinColumn(name = "servico_fk")
+	// private List<Servico> servicos;
 
 	// Gets e Sets
 
