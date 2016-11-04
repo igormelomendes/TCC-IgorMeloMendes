@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -36,16 +35,8 @@ public class Veiculo {
 	// Relacionamentos
 
 	@ManyToOne
-	@PrimaryKeyJoinColumn
 	@JoinColumn(name = "veiculo_fk")
-	private Cliente cliente;
-
-	// @OneToMany(cascade = { CascadeType.REFRESH }, fetch = FetchType.LAZY,
-	// mappedBy = "servico")
-	// @JoinColumn(name = "servico_fk")
-	// private List<Servico> servicos;
-
-	// Gets e Sets
+	private Cliente clientes;
 
 	public Long getId() {
 		return id;
@@ -67,8 +58,8 @@ public class Veiculo {
 		return placa;
 	}
 
-	public void setPlaca(String string) {
-		this.placa = string;
+	public void setPlaca(String placa) {
+		this.placa = placa;
 	}
 
 	public int getRenavan() {
@@ -95,12 +86,11 @@ public class Veiculo {
 		this.chassi = chassi;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
+	public Cliente getClientes() {
+		return clientes;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setClientes(Cliente clientes) {
+		this.clientes = clientes;
 	}
-
 }

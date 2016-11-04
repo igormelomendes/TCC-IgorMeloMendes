@@ -18,7 +18,6 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table(name = "cliente", uniqueConstraints = { @UniqueConstraint(columnNames = { "tipo_pessoa", "cpf_cnpj" }) })
 public class Cliente {
-
 	@Id
 	@Column(name = "id_cliente")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,11 +36,15 @@ public class Cliente {
 	@Column(length = 50)
 	private String rg;
 
-	// Relacionamentos 1.*
+	// Relacionamentos
 
 	@OneToMany(cascade = {
-			CascadeType.REFRESH }, targetEntity = Veiculo.class, fetch = FetchType.LAZY, mappedBy = "cliente")
+			CascadeType.REFRESH }, targetEntity = Veiculo.class, fetch = FetchType.LAZY, mappedBy = "clientes")
 	private List<Veiculo> veiculos;
+
+	@OneToMany(cascade = {
+			CascadeType.REFRESH }, targetEntity = OrdemServico.class, fetch = FetchType.LAZY, mappedBy = "clientes")
+	private List<OrdemServico> ordemServicos;
 
 	public Long getId() {
 		return id;
@@ -89,6 +92,14 @@ public class Cliente {
 
 	public void setVeiculos(List<Veiculo> veiculos) {
 		this.veiculos = veiculos;
+	}
+
+	public List<OrdemServico> getOrdemServicos() {
+		return ordemServicos;
+	}
+
+	public void setOrdemServicos(List<OrdemServico> ordemServicos) {
+		this.ordemServicos = ordemServicos;
 	}
 
 }
