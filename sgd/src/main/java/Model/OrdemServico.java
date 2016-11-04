@@ -30,9 +30,9 @@ public class OrdemServico {
 	@Column
 	private Boolean orcamento;
 
-	@ManyToOne(optional = false, fetch = FetchType.LAZY, cascade = { CascadeType.REFRESH })
+	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.REFRESH })
 	@PrimaryKeyJoinColumn
-	@JoinColumn(name = "cliente_fk", nullable = false)
+	@JoinColumn(name = "cliente_fk")
 	private Cliente clientes;
 
 	@OneToMany(cascade = {

@@ -20,16 +20,16 @@ public class Veiculo {
 	@Column(name = "nome_veiculo")
 	private String nome;
 
-	@Column
+	@Column(nullable = false)
 	private String placa;
 
-	@Column
+	@Column(nullable = false)
 	private int renavan;
 
 	@Column(name = "ano_veiculo")
 	private int ano;
 
-	@Column
+	@Column(nullable = false)
 	private int chassi;
 
 	// Relacionamentos

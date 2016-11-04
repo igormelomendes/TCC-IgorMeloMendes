@@ -23,10 +23,10 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "nome_completo")
+	@Column(name = "nome_completo", nullable = false)
 	private String nomeCompleto;
 
-	@Column(name = "tipo_pessoa")
+	@Column(name = "tipo_pessoa", nullable = false)
 	@Enumerated(EnumType.ORDINAL)
 	private TipoPessoa tipoPessoa;
 

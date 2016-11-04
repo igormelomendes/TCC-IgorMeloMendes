@@ -20,15 +20,15 @@ public class Servico {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "descricao_servico")
+	@Column(name = "descricao_servico", nullable = false)
 	private String descricao;
 
 	@Column
 	private double valor;
 
-	@ManyToOne(optional = false, fetch = FetchType.LAZY, cascade = { CascadeType.REFRESH })
+	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.REFRESH })
 	@PrimaryKeyJoinColumn
-	@JoinColumn(name = "ordemServico_fk", nullable = false)
+	@JoinColumn(name = "ordemServico_fk")
 	private OrdemServico ordemServicos;
 
 	public Long getId() {
