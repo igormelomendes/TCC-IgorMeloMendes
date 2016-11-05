@@ -26,7 +26,7 @@ public class Cliente {
 	@Column(name = "nome_completo", nullable = false)
 	private String nomeCompleto;
 
-	@Column(name = "tipo_pessoa", nullable = false)
+	@Column(name = "tipo_pessoa")
 	@Enumerated(EnumType.ORDINAL)
 	private TipoPessoa tipoPessoa;
 

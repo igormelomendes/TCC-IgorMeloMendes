@@ -17,7 +17,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "orcamento")
+@Table(name = "ordem_servico")
 public class OrdemServico {
 	@Id
 	@Column(name = "id_orcamento")
