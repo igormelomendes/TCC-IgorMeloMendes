@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Table(name = "ordem_servico")
 public class OrdemServico {
 	@Id
-	@Column(name = "id_orcamento")
+	@Column(name = "id_ordem_servico")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 

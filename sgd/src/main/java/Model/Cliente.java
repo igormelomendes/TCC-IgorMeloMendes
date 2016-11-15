@@ -26,6 +26,12 @@ public class Cliente {
 	@Column(name = "nome_completo", nullable = false)
 	private String nomeCompleto;
 
+	@Column
+	private String cidade;
+
+	@Column
+	private String estado;
+
 	@Column(name = "tipo_pessoa")
 	@Enumerated(EnumType.ORDINAL)
 	private TipoPessoa tipoPessoa;
@@ -60,6 +66,22 @@ public class Cliente {
 
 	public void setNomeCompleto(String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 	public TipoPessoa getTipoPessoa() {
@@ -101,5 +123,4 @@ public class Cliente {
 	public void setOrdemServicos(List<OrdemServico> ordemServicos) {
 		this.ordemServicos = ordemServicos;
 	}
-
 }
