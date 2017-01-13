@@ -1,29 +1,37 @@
 package dao;
 
-import Model.Cliente;
-
 public class testdao {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Cliente cliente = new Cliente();
-		// cliente.setNomeCompleto("Luan viado test2");
-		// cliente.setTipoPessoa(TipoPessoa.FISICA);
-		// cliente.setCpfCnpj("1535432134");
 
-		ClienteDAO dao = new ClienteDAO();
-		// System.out.println("Salvando a pessoa: " +
-		// cliente.getNomeCompleto());
-		// cliente = dao.salvar(cliente);
+		// ClienteDAO dao = new ClienteDAO();
+		// Cliente cliente = dao.BuscarPorId(new Long(2));
+		// dao.Remover(cliente);
+		// System.out.println(cliente.getNomeCompleto());
 
-		cliente.setNomeCompleto("Luan Guimarães Sakurai");
-		cliente = dao.salvar(cliente);
-		System.out.println("Alterando a pessoa: " + cliente.getNomeCompleto());
+		// TODO BUSCAR
+		/*
+		 * ClienteDAO dao = new ClienteDAO(); Cliente cliente =
+		 * dao.BuscarPorId(2); cliente.setNomeCompleto("Isabella Juada");
+		 * dao.Salvar(cliente); System.out.println(cliente.getNomeCompleto());
+		 */
+		// TODO ESSE FOI DE LISTAR
+		/*
+		 * ClienteDAO dao = new ClienteDAO(); List<Cliente> clientes =
+		 * dao.listarTodos(); for (Cliente cliente : clientes) {
+		 * System.out.println(cliente.getNomeCompleto()); }
+		 */
 
-		// Cliente cliente2 = dao.consultarPorId(cliente.getId());
-		// System.out.println("Consultando: " + cliente2.getNomeCompleto());
+		// TODO ESSE FOI DE SALVAR
+		/*
+		 * Cliente cliente = new Cliente();
+		 * cliente.setNomeCompleto("Galo Mendes");
+		 * cliente.setTipoPessoa(TipoPessoa.FISICA);
+		 * cliente.setCpfCnpj("3453462"); ClienteDAO dao = new ClienteDAO();
+		 * dao.Salvar(cliente);
+		 */
 
-		// System.out.println("Removendo a pessoa: " + cliente.getId());
-		// dao.excluir(cliente.getId());
+		// dao.closeSession();
+
 	}
 }
