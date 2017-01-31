@@ -1,5 +1,6 @@
 package View;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -47,6 +48,10 @@ public class TelaBuscaCliente extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaBuscaCliente() {
+		setForeground(Color.GRAY);
+		setFont(new Font("Times New Roman", Font.BOLD, 12));
+		setBackground(Color.LIGHT_GRAY);
+		setTitle("Tela Busca de Cliente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 663, 503);
 		contentPane = new JPanel();
@@ -89,7 +94,7 @@ public class TelaBuscaCliente extends JFrame {
 		opcaoCliente.setBounds(45, 128, 105, 28);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(45, 184, 554, 178);
+		scrollPane.setBounds(45, 184, 554, 138);
 		
 		table = new JTable(modelo);
 		table.setModel(new DefaultTableModel(

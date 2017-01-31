@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -42,6 +43,7 @@ public class TelaBuscaVeiculo extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaBuscaVeiculo() {
+		setTitle("Tela Busca de Veículo");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 653, 502);
 		contentPane = new JPanel();
@@ -57,6 +59,8 @@ public class TelaBuscaVeiculo extends JFrame {
 		lblOpo.setFont(new Font("Arial", Font.PLAIN, 12));
 
 		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Código", "Placa" }));
+		comboBox.setToolTipText("");
 		comboBox.setBounds(50, 129, 95, 26);
 
 		textField = new JTextField();
@@ -81,7 +85,7 @@ public class TelaBuscaVeiculo extends JFrame {
 								{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
 								{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
 								{ null, null, null, null }, { null, null, null, null }, },
-						new String[] { "C\u00F3digo", "Cliente", "Placa", "Renavan" }));
+						new String[] { "C\u00F3digo", "Cliente", "Placa", "Renavam" }));
 		table.getColumnModel().getColumn(0).setPreferredWidth(56);
 		table.getColumnModel().getColumn(1).setPreferredWidth(157);
 		table.getColumnModel().getColumn(2).setPreferredWidth(94);

@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -66,6 +67,16 @@ public class TelaLogin extends JFrame {
 		JButton btnAcessar = new JButton("Acessar");
 		btnAcessar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				if (txtUsuario.getText().equals("admin") && txtSenha.getText().equals("123456")) {
+					TelaPrincipal tela = new TelaPrincipal();
+					tela.setVisible(true);
+					dispose();
+				} else {
+					JOptionPane.showMessageDialog(null, "Úsuario ou Senha invalido!");
+					txtUsuario.setText("");
+					txtSenha.setText("");
+					txtUsuario.requestFocus();
+				}
 			}
 		});
 		btnAcessar.setBounds(53, 192, 89, 23);

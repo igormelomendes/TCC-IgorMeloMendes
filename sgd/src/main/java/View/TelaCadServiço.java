@@ -8,6 +8,7 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -49,6 +50,7 @@ public class TelaCadServiço extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaCadServiço() {
+		setTitle("Tela Cadastro de Serviço");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 715, 520);
 		contentPane = new JPanel();
@@ -84,6 +86,8 @@ public class TelaCadServiço extends JFrame {
 								contentPane.add(lblNewLabel, gbc_lblNewLabel);
 				
 						textField = new JTextField();
+		textField.setText("321");
+		textField.setEnabled(false);
 						textField.setColumns(10);
 						GridBagConstraints gbc_textField = new GridBagConstraints();
 		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
@@ -166,6 +170,8 @@ public class TelaCadServiço extends JFrame {
 		table.getColumnModel().getColumn(2).setPreferredWidth(200);
 				
 						JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Moto" }));
+		comboBox.setToolTipText("");
 						GridBagConstraints gbc_comboBox = new GridBagConstraints();
 		gbc_comboBox.anchor = GridBagConstraints.NORTH;
 		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
@@ -202,6 +208,7 @@ public class TelaCadServiço extends JFrame {
 		contentPane.add(scrollPane_1, gbc_scrollPane_1);
 								
 		table_1 = new JTable();
+		table_1.setToolTipText("");
 		scrollPane_1.setViewportView(table_1);
 		table_1.setModel(
 				new DefaultTableModel(new Object[][] { { null, null }, { null, null }, { null, null }, { null, null },
@@ -210,6 +217,7 @@ public class TelaCadServiço extends JFrame {
 		table_1.getColumnModel().getColumn(1).setPreferredWidth(79);
 						
 		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] { "2ª Via de CRLV" }));
 		GridBagConstraints gbc_comboBox_1 = new GridBagConstraints();
 		gbc_comboBox_1.anchor = GridBagConstraints.SOUTH;
 		gbc_comboBox_1.fill = GridBagConstraints.HORIZONTAL;

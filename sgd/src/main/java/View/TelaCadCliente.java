@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -53,6 +54,7 @@ public class TelaCadCliente extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaCadCliente() {
+		setTitle("Tela Cadastro de Cliente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 639, 400);
 		contentPane = new JPanel();
@@ -68,6 +70,7 @@ public class TelaCadCliente extends JFrame {
 		lblNome.setFont(new Font("Arial", Font.PLAIN, 12));
 
 		txtNome = new JTextField();
+		txtNome.setToolTipText("");
 		txtNome.setBounds(85, 90, 335, 28);
 		txtNome.setColumns(10);
 
@@ -164,7 +167,8 @@ public class TelaCadCliente extends JFrame {
 		contentPane.add(lblNewLabel_1);
 
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(398, 175, 122, 26);
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "ES", "MG", "SP", "RJ" }));
+		comboBox.setBounds(398, 175, 67, 26);
 		comboBox.setToolTipText("");
 		contentPane.add(comboBox);
 		contentPane.add(btnLimpar);

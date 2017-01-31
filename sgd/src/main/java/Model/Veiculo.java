@@ -17,6 +17,9 @@ public class Veiculo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@Column(name = "tipo_veiculo")
+	private String Veiculo;
+
 	@Column(name = "nome_veiculo")
 	private String nome;
 
@@ -24,13 +27,13 @@ public class Veiculo {
 	private String placa;
 
 	@Column(nullable = false)
-	private int renavan;
+	private String renavam;
 
 	@Column(name = "ano_veiculo")
 	private int ano;
 
 	@Column(nullable = false)
-	private int chassi;
+	private String chassi;
 
 	// Relacionamentos
 
@@ -44,6 +47,14 @@ public class Veiculo {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getVeiculo() {
+		return Veiculo;
+	}
+
+	public void setVeiculo(String veiculo) {
+		Veiculo = veiculo;
 	}
 
 	public String getNome() {
@@ -62,12 +73,12 @@ public class Veiculo {
 		this.placa = placa;
 	}
 
-	public int getRenavan() {
-		return renavan;
+	public String getRenavam() {
+		return renavam;
 	}
 
-	public void setRenavan(int renavan) {
-		this.renavan = renavan;
+	public void setRenavam(String renavam) {
+		this.renavam = renavam;
 	}
 
 	public int getAno() {
@@ -78,11 +89,11 @@ public class Veiculo {
 		this.ano = ano;
 	}
 
-	public int getChassi() {
+	public String getChassi() {
 		return chassi;
 	}
 
-	public void setChassi(int chassi) {
+	public void setChassi(String chassi) {
 		this.chassi = chassi;
 	}
 
@@ -93,4 +104,5 @@ public class Veiculo {
 	public void setClientes(Cliente clientes) {
 		this.clientes = clientes;
 	}
+
 }

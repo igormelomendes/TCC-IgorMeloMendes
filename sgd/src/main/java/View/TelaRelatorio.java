@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -42,6 +43,7 @@ public class TelaRelatorio extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaRelatorio() {
+		setTitle("Tela de Relatório");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 580, 471);
 		contentPane = new JPanel();
@@ -49,18 +51,19 @@ public class TelaRelatorio extends JFrame {
 		setContentPane(contentPane);
 
 		JLabel lblOpo = new JLabel("OPÇÃO:");
-		lblOpo.setBounds(98, 108, 45, 15);
+		lblOpo.setBounds(77, 113, 45, 15);
 		lblOpo.setFont(new Font("Arial", Font.PLAIN, 12));
 
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(50, 124, 135, 26);
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "DD / MM / AA", "MM / AA", "AA" }));
+		comboBox.setBounds(33, 129, 147, 26);
 
 		JLabel lblNewLabel = new JLabel("DATA:");
-		lblNewLabel.setBounds(300, 108, 33, 15);
+		lblNewLabel.setBounds(295, 113, 33, 15);
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 12));
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(50, 179, 456, 151);
+		scrollPane.setBounds(58, 184, 456, 151);
 
 		table = new JTable();
 		scrollPane.setViewportView(table);
@@ -74,7 +77,7 @@ public class TelaRelatorio extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblReltorio = new JLabel("RELATÓRIO");
-		lblReltorio.setBounds(281, 40, 90, 25);
+		lblReltorio.setBounds(228, 45, 116, 25);
 		lblReltorio.setFont(new Font("Arial", Font.BOLD, 20));
 		contentPane.add(lblReltorio);
 		contentPane.add(lblOpo);
@@ -82,13 +85,13 @@ public class TelaRelatorio extends JFrame {
 		contentPane.add(comboBox);
 
 		textField = new JTextField();
-		textField.setBounds(252, 123, 135, 28);
+		textField.setBounds(251, 128, 122, 28);
 		textField.setColumns(10);
 		contentPane.add(textField);
 		contentPane.add(scrollPane);
 
 		JButton btnCancelar = new JButton("Sair");
-		btnCancelar.setBounds(212, 363, 90, 27);
+		btnCancelar.setBounds(216, 368, 90, 27);
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new TelaPrincipal().show();
@@ -99,12 +102,12 @@ public class TelaRelatorio extends JFrame {
 		contentPane.add(btnCancelar);
 
 		JButton btnConsultar = new JButton("Consultar");
-		btnConsultar.setBounds(314, 363, 90, 27);
+		btnConsultar.setBounds(318, 368, 90, 27);
 		btnConsultar.setFont(new Font("Arial", Font.PLAIN, 12));
 		contentPane.add(btnConsultar);
 
 		JButton btnImprimir = new JButton("Imprimir");
-		btnImprimir.setBounds(416, 363, 90, 27);
+		btnImprimir.setBounds(420, 368, 74, 27);
 		btnImprimir.setFont(new Font("Arial", Font.PLAIN, 12));
 		contentPane.add(btnImprimir);
 	}

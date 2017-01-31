@@ -19,10 +19,10 @@ import javax.swing.table.DefaultTableModel;
 public class TelaRelatorioServ extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField txtIgorMeloMendes;
 	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField txtMg;
+	private JTextField txtAlegre;
 	private JTextField textField_4;
 	private JTable table;
 
@@ -46,6 +46,7 @@ public class TelaRelatorioServ extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaRelatorioServ() {
+		setTitle("Tela Consulta de Relatório");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 630, 693);
 		contentPane = new JPanel();
@@ -60,10 +61,11 @@ public class TelaRelatorioServ extends JFrame {
 		lblRg.setBounds(344, 157, 21, 15);
 		lblRg.setFont(new Font("Arial", Font.PLAIN, 12));
 
-		textField_2 = new JTextField();
-		textField_2.setBounds(365, 151, 122, 28);
-		textField_2.setEnabled(false);
-		textField_2.setColumns(10);
+		txtMg = new JTextField();
+		txtMg.setText("12345678 MG");
+		txtMg.setBounds(365, 151, 122, 28);
+		txtMg.setEnabled(false);
+		txtMg.setColumns(10);
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(95, 291, 456, 94);
@@ -83,11 +85,12 @@ public class TelaRelatorioServ extends JFrame {
 		lblCliente.setFont(new Font("Arial", Font.PLAIN, 12));
 		contentPane.add(lblCliente);
 
-		textField = new JTextField();
-		textField.setBounds(140, 123, 270, 28);
-		textField.setEnabled(false);
-		textField.setColumns(10);
-		contentPane.add(textField);
+		txtIgorMeloMendes = new JTextField();
+		txtIgorMeloMendes.setText("Igor Melo Mendes");
+		txtIgorMeloMendes.setBounds(140, 123, 270, 28);
+		txtIgorMeloMendes.setEnabled(false);
+		txtIgorMeloMendes.setColumns(10);
+		contentPane.add(txtIgorMeloMendes);
 
 		JLabel lblCpf = new JLabel("CPF:");
 		lblCpf.setBounds(113, 151, 27, 28);
@@ -95,23 +98,25 @@ public class TelaRelatorioServ extends JFrame {
 		contentPane.add(lblCpf);
 
 		textField_1 = new JTextField();
+		textField_1.setText("12345678911");
 		textField_1.setBounds(140, 151, 122, 28);
 		textField_1.setEnabled(false);
 		textField_1.setColumns(10);
 		contentPane.add(textField_1);
-		contentPane.add(textField_2);
+		contentPane.add(txtMg);
 		contentPane.add(lblRg);
 
-		JLabel lblEndereo = new JLabel("Endereço:");
-		lblEndereo.setBounds(84, 185, 56, 15);
+		JLabel lblEndereo = new JLabel("Cidade");
+		lblEndereo.setBounds(98, 185, 42, 15);
 		lblEndereo.setFont(new Font("Arial", Font.PLAIN, 12));
 		contentPane.add(lblEndereo);
 
-		textField_3 = new JTextField();
-		textField_3.setBounds(140, 179, 225, 28);
-		textField_3.setEnabled(false);
-		textField_3.setColumns(10);
-		contentPane.add(textField_3);
+		txtAlegre = new JTextField();
+		txtAlegre.setText("Alegre");
+		txtAlegre.setBounds(140, 179, 225, 28);
+		txtAlegre.setEnabled(false);
+		txtAlegre.setColumns(10);
+		contentPane.add(txtAlegre);
 
 		JLabel lblTelefone = new JLabel("Telefone:");
 		lblTelefone.setBounds(89, 213, 51, 15);
@@ -119,6 +124,8 @@ public class TelaRelatorioServ extends JFrame {
 		contentPane.add(lblTelefone);
 
 		textField_4 = new JTextField();
+		textField_4.setText("99 999999999");
+		textField_4.setToolTipText("");
 		textField_4.setBounds(140, 207, 180, 28);
 		textField_4.setEnabled(false);
 		textField_4.setColumns(10);

@@ -26,9 +26,9 @@ import javax.swing.table.DefaultTableModel;
 public class TelaVisualizarServiço extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField txtBros;
+	private JTextField txtKjy;
+	private JTextField txtMoto;
 	private JTextField textField_4;
 	private JTable table;
 	private JTextField textField;
@@ -92,19 +92,21 @@ public class TelaVisualizarServiço extends JFrame {
 		lblTipo.setBounds(340, 46, 27, 15);
 		lblTipo.setFont(new Font("Arial", Font.PLAIN, 12));
 
-		JLabel lblRenavan = new JLabel("Renavan:");
-		lblRenavan.setBounds(315, 99, 52, 15);
+		JLabel lblRenavan = new JLabel("Renavam:");
+		lblRenavan.setBounds(311, 99, 56, 15);
 		lblRenavan.setFont(new Font("Arial", Font.PLAIN, 12));
 
-		textField_1 = new JTextField();
-		textField_1.setBounds(77, 40, 122, 28);
-		textField_1.setEnabled(false);
-		textField_1.setColumns(10);
+		txtBros = new JTextField();
+		txtBros.setText("Bros 160");
+		txtBros.setBounds(77, 40, 122, 28);
+		txtBros.setEnabled(false);
+		txtBros.setColumns(10);
 
-		textField_2 = new JTextField();
-		textField_2.setBounds(77, 93, 122, 28);
-		textField_2.setEnabled(false);
-		textField_2.setColumns(10);
+		txtKjy = new JTextField();
+		txtKjy.setText("KJY8080");
+		txtKjy.setBounds(77, 93, 122, 28);
+		txtKjy.setEnabled(false);
+		txtKjy.setColumns(10);
 
 		JLabel lblDescrioDoServio_1 = new JLabel("Descrição do Serviço:");
 		lblDescrioDoServio_1.setBounds(5, 146, 124, 20);
@@ -142,19 +144,21 @@ public class TelaVisualizarServiço extends JFrame {
 		panel.setLayout(null);
 		panel.add(lblDescrioDoServio);
 		panel.add(lblVeculo);
-		panel.add(textField_1);
+		panel.add(txtBros);
 		panel.add(lblTipo);
 
-		textField_3 = new JTextField();
-		textField_3.setBounds(367, 40, 122, 28);
-		textField_3.setEnabled(false);
-		textField_3.setColumns(10);
-		panel.add(textField_3);
-		panel.add(textField_2);
+		txtMoto = new JTextField();
+		txtMoto.setText("Moto");
+		txtMoto.setBounds(367, 40, 122, 28);
+		txtMoto.setEnabled(false);
+		txtMoto.setColumns(10);
+		panel.add(txtMoto);
+		panel.add(txtKjy);
 		panel.add(lblPlaca);
 		panel.add(lblRenavan);
 
 		textField_4 = new JTextField();
+		textField_4.setText("12345678912");
 		textField_4.setBounds(367, 93, 122, 28);
 		textField_4.setEnabled(false);
 		textField_4.setColumns(10);
@@ -232,10 +236,10 @@ public class TelaVisualizarServiço extends JFrame {
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(32, 87, 209, 410);
+		contentPane.add(scrollPane);
 
 		JTextPane textPane = new JTextPane();
 		scrollPane.setViewportView(textPane);
-		contentPane.add(scrollPane);
 
 		JButton btnFechar = new JButton("Fechar");
 		btnFechar.setFont(new Font("Arial", Font.PLAIN, 12));
